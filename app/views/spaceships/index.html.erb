@@ -1,0 +1,19 @@
+<%# <%= render "components/navbar" %> %>
+<h1>All our available spaceships</h1>
+
+<%# faire des colonnes  %>
+<div class="spaceship-cards container md-col-4">
+  <%#  dans la div organiser les cards avec col etc %>
+  <%= @spaceships.each do |spaceship| %>
+    <div class="card" style="width: 18rem;">
+      <img src="<%= cl_image_tag @spaceships.photo.key%>" class="card-img-top" alt="...">
+      <div class="card-body">
+        <p class="card-title"><%= spaceship.name %></p>
+        <p class="card-text"><%= spaceship.address %></p>
+        <p><%= spaceship.price %></p>
+        <p class="btn btn-primary"><%= link_to "show more", spaceship_path(@spaceship) %></p>
+      </div>
+    </div>
+  <% end %>
+  <%# faire un each sur nos spaceships et les ranger dans une carte préfaite bootstrap² %>
+</div>
