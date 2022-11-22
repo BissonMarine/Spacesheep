@@ -6,4 +6,6 @@ class Spaceship < ApplicationRecord
   validates :price, presence: true
   validates :seats, presence: true
   validates :address, presence: true
+
+  has_many_attached :photos
 end
