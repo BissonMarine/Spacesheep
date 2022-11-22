@@ -5,6 +5,7 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+require 'open-uri'
 puts "destruction des seeds"
 User.destroy_all
 
@@ -22,11 +23,31 @@ user_owner2 = User.create!(name: 'Jean', email: 'jean@gmail.com', password: 'jea
 puts "...finished !"
 
 puts "creation spaceship..."
-spaceship1 = Spaceship.create!(name: 'Black Pearl', price: 20_000.40, address: "5 rue de l'Atlantique", seats: 15, energy: 'diesel', gravity: true, user: user_owner1, )
+spaceship1 = Spaceship.create!(name: 'Black Pearl', price: 20_000.40, address: "5 rue de l'Atlantique", seats: 15, energy: 'diesel', gravity: true, user: user_owner1,)
+file = URI.open('https://1.bp.blogspot.com/-C8AvZ63at9o/VFdz0NkXpcI/AAAAAAAAADg/0WRKdqZklGc/s1600/Interstellar+space+shuttle+(3).jpg')
+spaceship1.photos.attach(io: file, filename: 'Interstellar+space+shuttle+(3).jpg', content_type: 'image/jpg')
+spaceship1.save
+
 spaceship2 = Spaceship.create!(name: 'Nimbus 2000', price: 2_100.90, address: "10 rue du Ciel", seats: 2, energy: 'diesel', gravity: true, user: user_owner2)
-spaceship3 = Spaceship.create!(name: 'Black Pearl', price: 3_000.50, address: "5 rue de l'Atlantique", seats: 15, energy: 'diesel', gravity: true, user: user_owner1)
+file = URI.open('https://p8.storage.canalblog.com/82/08/1154220/120898053_o.jpg')
+spaceship2.photos.attach(io: file, filename: '120898053_o.jpg', content_type: 'image/jpg')
+spaceship2.save
+
+spaceship3 = Spaceship.create!(name: 'Nautilus', price: 3_000.50, address: "1 avenue de l'Atlantide", seats: 12, energy: 'diesel', gravity: true, user: user_owner1)
+file = URI.open('https://i.pinimg.com/736x/b1/19/07/b119070210c0194d3f263c054235fa5a.jpg')
+spaceship3.photos.attach(io: file, filename: 'b119070210c0194d3f263c054235fa5a.jpg', content_type: 'image/jpg')
+spaceship3.save
+
 spaceship4 = Spaceship.create!(name: 'Le Wagon # 1027', price: 3_000.50, address: "10 passage de la poule noire", seats: 27, energy: 'diesel', gravity: true, user: user_owner1)
+file = URI.open('https://themartinsamericanadventure.com/wp-content/uploads/2015/01/space-shuttle-bus.jpg')
+spaceship4.photos.attach(io: file, filename: 'space-shuttle-bus.jpg', content_type: 'image/jpg')
+spaceship4.save
+
 spaceship5 = Spaceship.create!(name: 'Faucon millenium', price: 65_000, address: "7 avenue de l'Espace", seats: 5, energy: 'diesel', gravity: true, user: user_owner2)
+file = URI.open('https://img.gocar.be/v7/_cloud_wordpress_/2018/05/millenium-falcon.jpg')
+spaceship5.photos.attach(io: file, filename: 'millenium-falcon.jpg', content_type: 'image/jpg')
+spaceship5.save
+
 puts "...finished !"
 
 puts "creation booking..."
