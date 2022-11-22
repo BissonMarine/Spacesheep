@@ -23,9 +23,9 @@ puts "...finished !"
 
 puts "creation spaceship..."
 spaceship1 = Spaceship.create!(name: 'Black Pearl', price: 20_000.40, address: "5 rue de l'Atlantique", seats: 15, energy: 'diesel', gravity: true, user: user_owner1)
-spaceship2 = Spaceship.create!(name: 'Nimbus 2000', price: 2_100.90, address: "10 rue du Ciel", seats: 2, energy: 'diesel', gravity: true, user: user_owner2
+spaceship2 = Spaceship.create!(name: 'Nimbus 2000', price: 2_100.90, address: "10 rue du Ciel", seats: 2, energy: 'diesel', gravity: true, user: user_owner2)
 spaceship3 = Spaceship.create!(name: 'Black Pearl', price: 3_000.50, address: "5 rue de l'Atlantique", seats: 15, energy: 'diesel', gravity: true, user: user_owner1)
-spaceship4 = Spaceship.create!(name: 'Le Wagon', price: 3_000.50, address: "10 passage de la poule noire", seats: 27, energy: 'diesel', gravity: true, user: user_owner1)
+spaceship4 = Spaceship.create!(name: 'Le Wagon # 1027', price: 3_000.50, address: "10 passage de la poule noire", seats: 27, energy: 'diesel', gravity: true, user: user_owner1)
 spaceship5 = Spaceship.create!(name: 'Faucon millenium', price: 65_000, address: "7 avenue de l'Espace", seats: 5, energy: 'diesel', gravity: true, user: user_owner2)
 puts "...finished !"
 
