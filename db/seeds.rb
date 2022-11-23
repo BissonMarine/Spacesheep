@@ -38,12 +38,12 @@ file = URI.open('https://i.pinimg.com/736x/b1/19/07/b119070210c0194d3f263c054235
 spaceship3.photos.attach(io: file, filename: 'b119070210c0194d3f263c054235fa5a.jpg', content_type: 'image/jpg')
 spaceship3.save
 
-spaceship4 = Spaceship.create!(name: 'Le Wagon # 1027', price: 3_000.50, address: "10 passage de la poule noire", seats: 27, energy: 'diesel', gravity: true, user: user_owner1)
+spaceship4 = Spaceship.create!(name: 'Le Wagon # 1027', price: 3_000.50, address: "10 passage de la poule noire", weapons: "lanceur à patate", seats: 27, energy: 'diesel', gravity: false, user: user_owner1)
 file = URI.open('https://themartinsamericanadventure.com/wp-content/uploads/2015/01/space-shuttle-bus.jpg')
 spaceship4.photos.attach(io: file, filename: 'space-shuttle-bus.jpg', content_type: 'image/jpg')
 spaceship4.save
 
-spaceship5 = Spaceship.create!(name: 'Faucon millenium', price: 65_000, address: "7 avenue de l'Espace", seats: 5, energy: 'diesel', gravity: true, user: user_owner2)
+spaceship5 = Spaceship.create!(name: 'Faucon millenium', price: 65_000, address: "7 avenue de l'Espace", weapons: "double canon à propulsion ionique, roquettes anti-comète, bouclier energétique", seats: 5, energy: 'diesel', gravity: true, user: user_owner2)
 file = URI.open('https://img.gocar.be/v7/_cloud_wordpress_/2018/05/millenium-falcon.jpg')
 spaceship5.photos.attach(io: file, filename: 'millenium-falcon.jpg', content_type: 'image/jpg')
 spaceship5.save
