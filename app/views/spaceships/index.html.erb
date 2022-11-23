@@ -1,4 +1,4 @@
-<%# <%= render "components/nav  bar" %>
+<%= render "components/navbar" %>
 <h1 class= "text-center">All our available spaceships</h1>
 <%# faire des colonnes  %>
 
@@ -7,17 +7,16 @@
 <div class="spaceship-cards container justify-content-center ">
   <%#  dans la div organiser les cards avec col etc %>
   <div class= "row d-flex justify-content-around">
-    <%= @spaceships.each do |spaceship| %>
+    <% @spaceships.each do |spaceship| %>
       <div class="card col-4-lg p-0 m-3" style="width: 18rem;">
         <img src="<%= cl_image_path spaceship.photos.first.key %>" class="card-img-top" alt="...">
         <div class="card-body">
           <p class="card-title"><strong><%= spaceship.name %></strong></p>
           <p class="card-text"><%= spaceship.address %></p>
           <p><%= spaceship.price %>€/day</p>
-          <p class="btn btn-primary"> See More / Book</p>
+          <p class="btn btn-primary"> See More/Book</p>
         </div>
       </div>
     <% end %>
   </div>
 </div>
-
