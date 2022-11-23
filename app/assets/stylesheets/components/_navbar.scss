@@ -1,12 +1,28 @@
-.navbar-lewagon {
+.navbar-spacesheep {
   justify-content: space-between;
   background: white;
+  position: sticky;
+    top: 0px;
 }
 
-.navbar-lewagon .navbar-collapse {
+.navbar-spacesheep .navbar-collapse {
   flex-grow: 0;
+  // color: $primary;
 }
 
-.navbar-lewagon .navbar-brand img {
+.navbar-spacesheep .navbar-brand img {
   width: 40px;
+}
+
+#logo {
+  width: 100;
+  object-fit: cover;
+}
+
+#spacesheep-name {
+  font-size: 20px;
+  font-weight: bolder;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  color: $primary;
+  letter-spacing: 3px;
 }
