@@ -1,4 +1,4 @@
-<h1 class= "text-center">All our available spaceships</h1>
+<h1 class= "text-center m-3">All our available spaceships</h1>
 <%# faire des colonnes  %>
 
 
@@ -7,13 +7,15 @@
   <%#  dans la div organiser les cards avec col etc %>
   <div class= "row d-flex justify-content-around">
     <% @spaceships.each do |spaceship| %>
-      <div class="card col-4-lg p-0 m-3" style="width: 18rem;">
+      <div class="card col-4-lg p-0 m-3 shadow" style="width: 18rem;">
         <img src="<%= cl_image_path spaceship.photos.first.key %>" class="card-img-top" alt="...">
-        <div class="card-body">
-          <p class="card-title"><strong><%= spaceship.name %></strong></p>
-          <p class="card-text"><%= spaceship.address %></p>
-          <p><%= spaceship.price %>€/day</p>
-          <%= link_to "See More/Book", spaceship_path(spaceship), class: "btn btn-primary align-bottom" %>
+        <div class="card-body d-flex flex-column justify-content-between">
+          <div>
+            <p class="card-title"><strong><%= spaceship.name %></strong></p>
+            <p class="card-text"><%= spaceship.address %></p>
+            <p><%= spaceship.price %>€/day</p>
+          </div>
+          <%= link_to "See More/Book", spaceship_path(spaceship), class: "btn btn-primary" %>
         </div>
       </div>
     <% end %>
