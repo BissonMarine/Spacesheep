@@ -1,8 +1,20 @@
-<h2><%= @spaceship.name %></h2>
-<h3><%= @spaceship.price %></h3>
-<p><%= @spaceship.description %></p>
-<p><%= @spaceship.weapons %></p>
-<p><%= @spaceship.energy %></p>
-<p><%= @spaceship.seats %></p>
-<p><%= @spaceship.address %></p>
-<p><%= @spaceship.gravity %></p>
+
+<div class="container"></div>
+  <div class="card-spaceship">
+    <h2><%= @spaceship.name %></h2>
+    <h3>price <%= @spaceship.price %></h3>
+    <p>description <%= @spaceship.description %></p>
+    <p>weapons <%= @spaceship.weapons %></p>
+    <p>energy <%= @spaceship.energy %></p>
+    <p>seats <%= @spaceship.seats %></p>
+    <p>address <%= @spaceship.address %></p>
+    <p>gravity <%= @spaceship.gravity %></p>
+  </div>
+  <div class="booking-date">
+    <%= simple_form_for [@spaceship, @booking] do |f| %>
+      <%= f.input :booking_start_date, html5: true %>
+      <%= f.input :booking_end_date, html5: true %>
+      <%= f.submit %>
+    <% end %>
+  </div>
+</div>
