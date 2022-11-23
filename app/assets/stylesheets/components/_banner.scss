@@ -1,7 +1,8 @@
 .spacesheep-banner {
   background-size: cover;
   background-position: center;
-  padding: 175px 0;
+  // padding: 175px 0;
+  min-height: calc(100vh - 140px);
   background-image: asset-url("stars-sky.jpg");
 }
 
@@ -9,7 +10,7 @@
   margin: 0;
   color: white;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-  font-size: 32px;
+  font-size: 50px;
   font-weight: bold;
 }
 
