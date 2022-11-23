@@ -1,4 +1,3 @@
-<%= render "components/navbar" %>
 <h1 class= "text-center">All our available spaceships</h1>
 <%# faire des colonnes  %>
 
@@ -14,10 +13,9 @@
           <p class="card-title"><strong><%= spaceship.name %></strong></p>
           <p class="card-text"><%= spaceship.address %></p>
           <p><%= spaceship.price %>€/day</p>
-          <p class="btn btn-primary align-bottom"> See More/Book</p>
+          <%= link_to "See More/Book", spaceship_path(spaceship), class: "btn btn-primary align-bottom" %>
         </div>
       </div>
     <% end %>
   </div>
 </div>
-
