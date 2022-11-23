@@ -3,13 +3,5 @@ class SpaceshipsController < ApplicationController
 
   def show
     @spaceship = Spaceship.find(params[:id])
-    @spaceship.name
-    @spaceship.price
-    @spaceship.description
-    @spaceship.weapons
-    @spaceship.energy
-    @spaceship.seats
-    @spaceship.address
-    @spaceship.gravity
   end
 end
