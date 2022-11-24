@@ -12,14 +12,18 @@
   opacity: 1;
 }
 
+// Bouton de notre homepage :
 .btn-flat {
-  justify-content: center;
+  // justify-content: center;
   color: white;
+  font-family: 'Comfortaa', cursive;
+  font-size: 25px;
   text-decoration: none;
   padding: 8px 24px;
   border-radius: 4px;
   background: $primary;
   transition: background 0.3s ease;
+  margin-top: 40px;
 }
 
 .btn-flat:hover {
