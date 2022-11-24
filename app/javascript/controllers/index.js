@@ -4,6 +4,9 @@
 
 import { application } from "./application"
 
+import AnimatedStarsJsController from "./animated_stars_js_controller"
+application.register("animated-stars-js", AnimatedStarsJsController)
+
 import HelloController from "./hello_controller"
 application.register("hello", HelloController)
 
