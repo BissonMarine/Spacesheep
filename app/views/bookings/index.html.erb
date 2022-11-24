@@ -1,0 +1,29 @@
+<h1> Bookings index </h1>
+<h2> User Bookings </h2>
+
+
+<% @user_bookings.each do |user_booking| %>
+  <div class="card-product">
+    <%= cl_image_tag user_booking.spaceship.photos.first.key %>
+    <div class="card-product-infos">
+      <p><small><%= "Booked from #{user_booking.booking_start_date} to #{user_booking.booking_end_date}" %></small></p>
+      <p>📍<%= user_booking.spaceship.address %></p>
+      <p> total price <%= user_booking.total_price %>€</p>
+    </div>
+  </div>
+<% end %>
+
+  <% if @owner_bookings.present? %>
+    <h2> Owner Bookings </h2>
+    <% @owner_bookings.each do |owner_booking| %>
+      <div class="card-product">
+        <%= cl_image_tag owner_booking.spaceship.photos.first.key %>
+        <div class="card-product-infos">
+          <p><small><%= "Booked from #{owner_booking.booking_start_date} to #{owner_booking.booking_end_date}" %></small></p>
+          <p>📍<%= owner_booking.spaceship.address %></p>
+          <p> total price <%= owner_booking.total_price %>€</p>
+        </div>
+        ✅❌
+      </div>
+    <% end %>
+  <% end %>
