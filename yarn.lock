@@ -730,6 +730,11 @@ terser@^5.14.1:
     commander "^2.20.0"
     source-map-support "~0.5.20"
 
+type.js@^0.0.1:
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/type.js/-/type.js-0.0.1.tgz#566af8056e004a8e77fe75bdc4a09e8db6dfcd01"
+  integrity sha512-0h595G4radjv0becIPEBYgHJTZbbsG0zT6NlU26MzU1LWGZ+f6gJLkfLhBBpynT48+92SC+R7KIla9wnVZ0PLA==
+
 typed.js@^2.0.12:
   version "2.0.12"
   resolved "https://registry.yarnpkg.com/typed.js/-/typed.js-2.0.12.tgz#246aff074c8e18d32ec27acb7be15094ac0bc0e1"
