@@ -23,7 +23,7 @@ puts "...finished !"
 puts "Creation user owners..."
 user_owner1 = User.create!(name: 'Daniel', email: 'daniel@gmail.com', password: 'jackdaniel')
 user_owner2 = User.create!(name: 'Jean', email: 'jean@gmail.com', password: 'jeanjack')
-user_owner3 = User.create!(name: 'Gertrude', email: 'jean@gmail.com', password: 'gertrudelapoule')
+user_owner3 = User.create!(name: 'Gertrude', email: 'gertrude@gmail.com', password: 'gertrudelapoule')
 user_owner4 = User.create!(name: 'Micheline', email: 'micheline61@gmail.com', password: 'michelinecamembert')
 puts "...finished !"
 
