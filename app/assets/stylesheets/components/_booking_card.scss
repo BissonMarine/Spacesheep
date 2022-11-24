@@ -5,13 +5,15 @@
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
   align-items: center;
-  margin: 16px;
+  margin: 20px;
+  object-fit: cover ;
 }
 
 .card-product img {
-  height: 100%;
-  width: 120px;
-  object-fit: cover;
+  height: 120px;
+  width: 170px;
+  position: center;
+  object-fit:cover;
 }
 
 .card-product h2 {
