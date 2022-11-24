@@ -7,9 +7,12 @@
 //   // background-color: blue;
 // }
 
-body {
-  background: rgb(14, 4, 45);
-  // overflow: hidden;
+.spaceships-index-body {
+  // background: rgb(14, 4, 45);
+  background: linear-gradient(to right, rgb(39, 2, 97) 0%, rgb(13, 3, 44) 50%, black);
+  // background-image: url("stars-sky.jpg");
+  // background-size: cover;
+  // background-position: center;
 }
 
 .star {

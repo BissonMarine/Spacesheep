@@ -4,13 +4,13 @@ import { Controller } from "@hotwired/stimulus"
 export default class extends Controller {
   connect() {
 
-    const STARSNUM = 150;
-    const SPEED = 3;
+    const STARSNUM = 800;
+    const SPEED = 2;
     const windowW = window.innerWidth;
     const windowH = document.body.offsetHeight;
 
     for (let i = 0; i < STARSNUM; i++) {
-      const size = Math.floor((Math.random() * 5) + 2);
+      const size = Math.floor((Math.random() * 2) + 2);
       const animDur = Math.floor((Math.random() * 10) + 4) / (SPEED / 2);
       const posX = Math.floor((Math.random() * windowW) + 1);
       const posY = Math.floor((Math.random() * windowH) + 1);
