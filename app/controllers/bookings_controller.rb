@@ -2,14 +2,17 @@ class BookingsController < ApplicationController
   skip_before_action :authenticate_user!
 
   def new
-    @spaceship = Spaceship.find(params[:id])
+    @spaceship = Spaceship.find(params[:spaceship_id])
     @booking = Booking.new
   end
 
   def create
-    @spaceship = Spaceship.find(params[:id])
+    @spaceship = Spaceship.find(params[:spaceship_id])
     @booking = Booking.new(booking_params)
+    @booking.user = current_user
     @booking.spaceship = @spaceship
+    @booking.total_price = (@booking.booking_end_date - @booking.booking_start_date) * @spaceship.price
+    @booking.validated = "pending"
 
     if @booking.save
       redirect_to bookings_path(@bookings)
