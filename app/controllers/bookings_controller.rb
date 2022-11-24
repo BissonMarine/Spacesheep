@@ -8,8 +8,8 @@ class BookingsController < ApplicationController
     # les afficher
 
     # @user = User.find(params(User.name == "jean"))
-    @user_spaceships = Spaceship.where(user: current_user) #retourne un array contenant les obj spships associés au user
+    # @user_spaceships = Spaceship.where(user: User.find(19)) #retourne un array contenant les obj spships associés au user
 
-    @owner_bookings = Booking.includes(:spaceship).where(spaceship: { user: current_user })
+    @owner_bookings = Booking.includes(:spaceship).where(spaceship: { user: User.find(21) })
   end
 end
