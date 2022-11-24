@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_11_22_120033) do
+ActiveRecord::Schema[7.0].define(version: 2022_11_24_145504) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -44,7 +44,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_22_120033) do
 
   create_table "bookings", force: :cascade do |t|
     t.date "booking_start_date"
-    t.float "total_price"
+    t.integer "total_price"
     t.string "validated"
     t.bigint "user_id", null: false
     t.bigint "spaceship_id", null: false
@@ -57,7 +57,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_22_120033) do
 
   create_table "spaceships", force: :cascade do |t|
     t.string "name"
-    t.float "price"
+    t.integer "price"
     t.text "description"
     t.string "weapons"
     t.string "energy"
