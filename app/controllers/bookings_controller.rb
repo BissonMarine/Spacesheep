@@ -17,9 +17,8 @@ class BookingsController < ApplicationController
     @booking.user = current_user
     @booking.spaceship = @spaceship
     @booking.validated = "pending"
-
+    @booking.total_price = (@booking.booking_end_date - @booking.booking_start_date) * @spaceship.price
     if @booking.save
-      @booking.total_price = (@booking.booking_end_date - @booking.booking_start_date) * @spaceship.price
       redirect_to bookings_path, notice: "Action saved"
     else
       render 'spaceships/show', status: :unprocessable_entity
@@ -27,7 +26,7 @@ class BookingsController < ApplicationController
     end
   end
 
-  
+
   private
 
   def booking_params
