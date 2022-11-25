@@ -20,7 +20,7 @@ class BookingsController < ApplicationController
     @booking.validated = "pending"
 
     if @booking.save
-      redirect_to bookings_path(@bookings)
+      redirect_to bookings_path
     else
       render :new
     end
