@@ -1,17 +1,21 @@
 .card-product {
   overflow: hidden;
   height: 120px;
-  background: white;
+  background: rgba(255, 255, 255, 0.9);
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  border-radius: 12px;
   display: flex;
   align-items: center;
-  margin: 16px;
+  margin: 20px;
+  object-fit: cover ;
+
 }
 
 .card-product img {
-  height: 100%;
-  width: 120px;
-  object-fit: cover;
+  height: 120px;
+  width: 170px;
+  position: center;
+  object-fit:cover;
 }
 
 .card-product h2 {
@@ -21,11 +25,14 @@
 }
 
 .card-product p {
-  font-size: 12px;
+  font-family: 'Comfortaa', cursive;
+  font-size: 15px;
   line-height: 1.4;
   opacity: .7;
   margin-bottom: 0;
   margin-top: 8px;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 .card-product .card-product-infos {
@@ -38,4 +45,15 @@
   width: 100%;
   align-items: center;
   margin: 16px;
+}
+
+#total-price {
+  color: $primary;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+#status {
+  display: flex;
+  align-items: flex-end;
 }
