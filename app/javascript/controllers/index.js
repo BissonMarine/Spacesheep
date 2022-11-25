@@ -7,6 +7,9 @@ import { application } from "./application"
 import AnimatedStarsJsController from "./animated_stars_js_controller"
 application.register("animated-stars-js", AnimatedStarsJsController)
 
+import CalculDateJsController from "./calcul_date_js_controller"
+application.register("calcul-date-js", CalculDateJsController)
+
 import HelloController from "./hello_controller"
 application.register("hello", HelloController)
 

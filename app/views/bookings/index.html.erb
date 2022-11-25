@@ -1,4 +1,4 @@
-<div class="spaceships-index-body" data-controller="animated-stars-js">
+<div class="bookings-index-body">
 
   <h1 class="title-properties text-center"> My bookings </h1>
   <%# <h2> User Bookings </h2> %>
@@ -10,27 +10,27 @@
           <div class="card-product-infos">
             <p><small><%= "Booked from #{user_booking.booking_start_date} to #{user_booking.booking_end_date}" %></small></p>
             <p>📍<%= user_booking.spaceship.address %></p>
-            <p> total price <%= user_booking.total_price %>€</p>
+            <p id="total-price"> Total price : <%= user_booking.total_price %>$</p>
           </div>
       </div>
       <div class="align-content-end">
-        <p> Status : <%= user_booking.validated %> </p>
+        <p id="status"> Status : <%= user_booking.validated %> </p>
       </div>
     </div>
   <% end %>
 
   <% if @owner_bookings.present? %>
-    <h2> Owner Bookings </h2>
+    <%# <h2> Owner Bookings </h2> %>
     <% @owner_bookings.each do |owner_booking| %>
       <div class="card-product">
         <%= cl_image_tag owner_booking.spaceship.photos.first.key %>
         <div class="card-product-infos">
           <p><small><%= "Booked from #{owner_booking.booking_start_date} to #{owner_booking.booking_end_date}" %></small></p>
           <p>📍<%= owner_booking.spaceship.address %></p>
-          <p> total price <%= owner_booking.total_price %>€</p>
+          <p id="total-price"> Total price : <%= owner_booking.total_price %>$</p>
         </div>
         <div>
-        <p> Status : <%= user_booking.validated %> </p>
+        <p id="status"> Status : <%= user_booking.validated %> </p>
         </div>
         ✅❌
       </div>
