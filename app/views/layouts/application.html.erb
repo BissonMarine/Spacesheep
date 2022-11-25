@@ -16,9 +16,9 @@
   <body style=" display: flex; min-height: 100vh; flex-direction:column;">
     <%= render "components/navbar" %>
     <main style="flex: 1;">
+    <%= render "components/flashes" %>
     <%= yield %>
     </main>
-    <%# <%= render "components/flashes" %>
     <%= render "components/footer" %>
   </body>
 </html>
