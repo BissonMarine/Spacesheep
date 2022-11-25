@@ -1,15 +1,22 @@
-<div class="container"></div>
+<div class="spaceships-index-body d-flex" data-controller="animated-stars-js">
+  <div class="card col-5 m-5 p-4 border-0 rounded-4" data-controller="calcul-date-js">
+    <div class="card-spaceship">
+      <div class="heading-card-spaceship mb-3 d-flex align-items-center justify-content-between">
+<%#
+<div class="container">
   <div class="element d-flex">
     <div class="left col-5 m-5" data-controller="calcul-date-js">
-      <div class="card-spaceship border-bottom">
-        <h2><strong><%= @spaceship.name %></strong></h2>
-        <p data-calcul-date-js-target="price"><strong>💰 <%= @spaceship.price %> €</strong></p>
-        <p>📋 <%= @spaceship.description.capitalize %></p>
-        <p>📍 <%= @spaceship.address.capitalize %></p>
-        <p>💺 <%= pluralize @spaceship.seats, 'seat' %></p>
-        <p>⚡ <%= @spaceship.energy.capitalize %> energy</p>
-        <p>⚔️ <%= @spaceship.weapons.capitalize %></p>
-        <p><%= @spaceship.gravity ? '✅ Gravity ' : '❌ Gravity' %></p>
+      <div class="card-spaceship border-bottom"> %>
+        <div class= "border-bottom">
+          <h2><strong><%= @spaceship.name %></strong></h2>
+          <p data-calcul-date-js-target="price"><strong>💰 <%= @spaceship.price %> €</strong></p>
+          <p>📋 <%= @spaceship.description.capitalize %></p>
+          <p>📍 <%= @spaceship.address.capitalize %></p>
+          <p>💺 <%= pluralize @spaceship.seats, 'seat' %></p>
+          <p>⚡ <%= @spaceship.energy.capitalize %> energy</p>
+          <p>⚔️ <%= @spaceship.weapons.capitalize %></p>
+          <p><%= @spaceship.gravity ? '✅ Gravity ' : '❌ Gravity' %></p>
+        </div>
       </div>
       <div class="booking-date mt-4">
         <%= simple_form_for [@spaceship, @booking] do |f| %>
@@ -22,12 +29,12 @@
         <% end %>
       </div>
     </div>
+    </div>
     <div class="right col-5 m-5">
       <div class="photo">
         <% @spaceship.photos.each do |photo| %>
           <%= cl_image_tag photo.key, width: 600 %>
         <% end %>
       </div>
-    </div>
   </div>
 </div>
