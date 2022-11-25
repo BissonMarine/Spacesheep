@@ -4,26 +4,66 @@
 
 <% @user_bookings.each do |user_booking| %>
   <div class="card-product">
-    <%= cl_image_tag user_booking.spaceship.photos.first.key %>
-    <div class="card-product-infos">
-      <p><small><%= "Booked from #{user_booking.booking_start_date} to #{user_booking.booking_end_date}" %></small></p>
-      <p>📍<%= user_booking.spaceship.address %></p>
-      <p> total price <%= user_booking.total_price %>€</p>
-    </div>
+      <%= cl_image_tag user_booking.spaceship.photos.first.key %>
+      <div class= "infos-card">
+        <div class="card-product-infos">
+          <p><small><%= "Booked from #{user_booking.booking_start_date} to #{user_booking.booking_end_date}" %></small></p>
+          <p>📍<%= user_booking.spaceship.address %></p>
+          <p>💰 <%= user_booking.total_price %>€</p>
+        </div>
+        <div>
+          <% if user_booking.validated == "confirmed" %>
+            <p>✅</p>
+          <% elsif user_booking.validated == "declined"%>
+            <p>❌</p>
+          <% end %>
+        </div>
+      </div>
   </div>
 <% end %>
 
-  <% if @owner_bookings.present? %>
+
+  <% if @owner_bookings.present?%>
     <h2> Owner Bookings </h2>
+
     <% @owner_bookings.each do |owner_booking| %>
-      <div class="card-product">
-        <%= cl_image_tag owner_booking.spaceship.photos.first.key %>
-        <div class="card-product-infos">
-          <p><small><%= "Booked from #{owner_booking.booking_start_date} to #{owner_booking.booking_end_date}" %></small></p>
-          <p>📍<%= owner_booking.spaceship.address %></p>
-          <p> total price <%= owner_booking.total_price %>€</p>
+      <% if owner_booking.validated == "pending" %>
+        <div class="card-product">
+          <%= cl_image_tag owner_booking.spaceship.photos.first.key %>
+          <div class="card-product-infos">
+            <p><small><%= "Booked from #{owner_booking.booking_start_date} to #{owner_booking.booking_end_date}" %></small></p>
+            <p>📍<%= owner_booking.spaceship.address %></p>
+            <p>💰 <%= owner_booking.total_price %>€</p>
+          </div>
+          <%= button_to "✅", accept_owner_booking_path(owner_booking), method: :patch %>
+          <%= button_to "❌", decline_owner_booking_path(owner_booking), method: :patch %>
         </div>
-        ✅❌
-      </div>
+      <% elsif owner_booking.validated == "confirmed"%>
+        <div class="card-product">
+          <%= cl_image_tag owner_booking.spaceship.photos.first.key %>
+          <div class= "infos-card">
+            <div class="card-product-infos">
+              <p><small><%= "Booked from #{owner_booking.booking_start_date} to #{owner_booking.booking_end_date}" %></small></p>
+              <p>📍<%= owner_booking.spaceship.address %></p>
+              <p>💰 <%= owner_booking.total_price %>€</p>
+            </div>
+            <div>
+              <small><%= "STATUS: ✅" %></small>
+            </div>
+          </div>
+        </div>
+      <% else %>
+        <div class="card-product">
+          <%= cl_image_tag owner_booking.spaceship.photos.first.key %>
+          <div class= "infos-card">
+            <div class="card-product-infos">
+              <p><small><%= "Booked from #{owner_booking.booking_start_date} to #{owner_booking.booking_end_date}" %></small></p>
+              <p>📍<%= owner_booking.spaceship.address %></p>
+              <p>💰 <%= owner_booking.total_price %>€</p>
+            </div>
+            <small><%= "STATUS: ❌" %></small>
+          </div>
+        </div>
+      <% end %>
     <% end %>
   <% end %>
