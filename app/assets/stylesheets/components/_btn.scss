@@ -45,3 +45,19 @@
   background: linear-gradient(#147EFF, #0F67DA);
   color: white;
 }
+
+.btn-medium {
+  color: white;
+  font-family: 'Comfortaa', cursive;
+  font-size: 15px;
+  text-decoration: none;
+  padding: 8px 24px;
+  border-radius: 4px;
+  background: $primary;
+  transition: background 0.3s ease;
+}
+
+.btn-medium:hover {
+  background: #4D04C4;
+  color: white;
+}

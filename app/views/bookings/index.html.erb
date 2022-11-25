@@ -27,6 +27,7 @@
     <h2> Owner Bookings </h2>
 
     <% @owner_bookings.each do |owner_booking| %>
+
       <% if owner_booking.validated == "pending" %>
         <div class="card-product">
           <%= cl_image_tag owner_booking.spaceship.photos.first.key %>
@@ -37,6 +38,7 @@
           </div>
           <%= button_to "✅", accept_owner_booking_path(owner_booking), method: :patch %>
           <%= button_to "❌", decline_owner_booking_path(owner_booking), method: :patch %>
+
         </div>
       <% elsif owner_booking.validated == "confirmed"%>
         <div class="card-product">
