@@ -15,10 +15,10 @@
 
   <body style=" display: flex; min-height: 100vh; flex-direction:column;">
     <%= render "components/navbar" %>
-    <%# <main style="flex: 1;"> %>
+    <main style="flex: 1;">
+    <%= render "components/flashes" %>
     <%= yield %>
-    <%# </main> %>
-    <%# <%= render "components/flashes" %>
+    </main>
     <%= render "components/footer" %>
   </body>
 </html>
