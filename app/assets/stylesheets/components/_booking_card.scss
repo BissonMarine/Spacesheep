@@ -39,13 +39,21 @@
   padding: 16px;
 }
 
+.infos-card {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+  margin: 16px;
+}
+
 #total-price {
   color: $primary;
   font-weight: bold;
   font-size: 18px;
-
 }
 
 #status {
-
+  display: flex;
+  align-items: flex-end;
 }

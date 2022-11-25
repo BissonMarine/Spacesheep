@@ -1,39 +1,76 @@
 <div class="bookings-index-body">
 
   <h1 class="title-properties text-center"> My bookings </h1>
-  <%# <h2> User Bookings </h2> %>
+  <h2 class="subtitle-properties"> User Bookings </h2>
 
   <% @user_bookings.each do |user_booking| %>
-    <div class="d-flex card-product justify-content-between">
-      <div class="d-flex align-items-center">
+    <div class="card-product">
         <%= cl_image_tag user_booking.spaceship.photos.first.key %>
+        <div class="infos-card">
           <div class="card-product-infos">
             <p><small><%= "Booked from #{user_booking.booking_start_date} to #{user_booking.booking_end_date}" %></small></p>
-            <p>📍<%= user_booking.spaceship.address %></p>
-            <p id="total-price"> Total price : <%= user_booking.total_price %>$</p>
+            <p>📍 <%= user_booking.spaceship.address %></p>
+            <p id="total-price">💰 <%= user_booking.total_price %>$</p>
           </div>
-      </div>
-      <div class="align-content-end">
-        <p id="status"> Status : <%= user_booking.validated %> </p>
-      </div>
+          <div>
+          <% if user_booking.validated == "confirmed" %>
+            <p>Booking confirmed ✅</p>
+          <% elsif user_booking.validated == "declined"%>
+            <p>Booking declined ❌</p>
+          <% elsif user_booking.validated == "pending"%>
+            <p>Booking still pending ⏰</p>
+          <% end %>
+          </div>
+        </div>
     </div>
   <% end %>
 
   <% if @owner_bookings.present? %>
-    <%# <h2> Owner Bookings </h2> %>
+    <h2 class="subtitle-properties"> Owner Bookings </h2>
     <% @owner_bookings.each do |owner_booking| %>
+    <% if owner_booking.validated == "pending" %>
       <div class="card-product">
-        <%= cl_image_tag owner_booking.spaceship.photos.first.key %>
-        <div class="card-product-infos">
-          <p><small><%= "Booked from #{owner_booking.booking_start_date} to #{owner_booking.booking_end_date}" %></small></p>
-          <p>📍<%= owner_booking.spaceship.address %></p>
-          <p id="total-price"> Total price : <%= owner_booking.total_price %>$</p>
-        </div>
-        <div>
-        <p id="status"> Status : <%= user_booking.validated %> </p>
-        </div>
-        ✅❌
+          <%= cl_image_tag owner_booking.spaceship.photos.first.key %>
+          <div class="infos-card">
+            <div class="card-product-infos">
+              <p><small><%= "Your spaceship is booked from #{owner_booking.booking_start_date} to #{owner_booking.booking_end_date}" %></small></p>
+              <p>📍 <%= owner_booking.spaceship.address %></p>
+              <p id="total-price">💰 <%= owner_booking.total_price %>$</p>
+            </div>
+            <div>
+              <%= button_to "✅", accept_owner_booking_path(owner_booking), method: :patch %>
+              <%= button_to "❌", decline_owner_booking_path(owner_booking), method: :patch %>
+            </div>
       </div>
+    <% elsif owner_booking.validated == "confirmed"%>
+            <div class="card-product">
+              <%= cl_image_tag owner_booking.spaceship.photos.first.key %>
+              <div class= "infos-card">
+                <div class="card-product-infos">
+                  <p><small><%= "Your spaceship is booked from #{owner_booking.booking_start_date} to #{owner_booking.booking_end_date}" %></small></p>
+                  <p>📍<%= owner_booking.spaceship.address %></p>
+                  <p id="total-price">💰 <%= owner_booking.total_price %>$</p>
+                </div>
+                <div>
+                  <p><small><%= "Booking confirmed ✅" %></small></p>
+                </div>
+              </div>
+            </div>
+          <% else %>
+            <div class="card-product">
+              <%= cl_image_tag owner_booking.spaceship.photos.first.key %>
+              <div class= "infos-card">
+                <div class="card-product-infos">
+                  <p><small><%= "Your spaceship is booked from #{owner_booking.booking_start_date} to #{owner_booking.booking_end_date}" %></small></p>
+                  <p>📍<%= owner_booking.spaceship.address %></p>
+                  <p id="total-price">💰 <%= owner_booking.total_price %>$</p>
+                </div>
+                <div>
+                  <p><small><%= "Booking declined ❌" %></small></p>
+                </div>
+              </div>
+            </div>
+          <% end %>
     <% end %>
   <% end %>
 </div>
