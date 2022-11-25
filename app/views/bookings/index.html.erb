@@ -2,7 +2,7 @@
 
   <h1 class="title-properties text-center"> My bookings </h1>
   <h2 class="subtitle-properties"> User Bookings </h2>
-
+<%# oko k %>
   <% @user_bookings.each do |user_booking| %>
     <div class="card-product">
         <%= cl_image_tag user_booking.spaceship.photos.first.key %>
