@@ -2,7 +2,7 @@
 
   <h1 class="title-properties text-center"> My bookings </h1>
   <h2 class="subtitle-properties"> User Bookings </h2>
-
+<%# oko k %>
   <% @user_bookings.each do |user_booking| %>
     <div class="card-product">
         <%= cl_image_tag user_booking.spaceship.photos.first.key %>
@@ -41,6 +41,7 @@
               <%= button_to "✅", accept_owner_booking_path(owner_booking), method: :patch %>
               <%= button_to "❌", decline_owner_booking_path(owner_booking), method: :patch %>
             </div>
+          </div>
       </div>
     <% elsif owner_booking.validated == "confirmed"%>
             <div class="card-product">
