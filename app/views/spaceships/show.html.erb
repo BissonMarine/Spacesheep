@@ -1,9 +1,23 @@
-<div class="spaceships-index-body d-flex" data-controller="animated-stars-js">
-  <div class="card col-5 m-5 p-4 border-0 rounded-4">
-    <div class="card-spaceship border-bottom">
-      <div class="heading-card-spaceship mb-3 d-flex align-items-center justify-content-between">
+<div class="container"></div>
+  <div class="element d-flex">
+    <div class="left col-5 m-5" data-controller="calcul-date-js">
+      <div class="card-spaceship border-bottom">
         <h2><strong><%= @spaceship.name %></strong></h2>
-        <h4><strong>💰 <%= @spaceship.price %> $</strong></h4>
+        <p data-calcul-date-js-target="price"><strong>💰 <%= @spaceship.price %> €</strong></p>
+        <p>📋 <%= @spaceship.description %></p>
+        <p>⚔️ <%= @spaceship.weapons %></p>
+        <p>⚡ <%= @spaceship.energy %></p>
+        <p>💺 <%= @spaceship.seats %></p>
+        <p>📍 <%= @spaceship.address %></p>
+        <p>🪶 <%= @spaceship.gravity%></p>
+      </div>
+      <div class="booking-date mt-4">
+        <%= simple_form_for [@spaceship, @booking] do |f| %>
+          <%= f.input :booking_start_date, html5: true, input_html:{ data: { "calcul-date-js-target": "start", action: "change->calcul-date-js#compute" }} %>
+          <%= f.input :booking_end_date, html5: true, input_html:{data: {"calcul-date-js-target": "end", action: "change->calcul-date-js#compute"}} %>
+          <%= f.submit "Book now !", class: "btn-flat"%>
+          <div><p data-calcul-date-js-target="result"></p></div>
+        <% end %>
       </div>
       <p>📋 <%= @spaceship.description.capitalize %></p>
       <p>⚔️ <%= @spaceship.weapons.capitalize %></p>
