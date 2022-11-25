@@ -18,7 +18,7 @@ export default class extends Controller {
     console.log(nbJours)
     console.log(priceValue * nbJours)
     const result = priceValue * nbJours
-    this.resultTarget.innerHTML = result
+    this.resultTarget.innerHTML = `💰 ${result} $`
     }
   }
 }
