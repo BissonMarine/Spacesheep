@@ -47,6 +47,14 @@
   margin: 16px;
 }
 
+.infos-card-spaceships {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+  margin: 16px;
+}
+
 #total-price {
   color: $primary;
   font-weight: bold;
