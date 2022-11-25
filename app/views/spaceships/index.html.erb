@@ -2,21 +2,22 @@
   <h1 class= "text-center page-title title-properties">All our available spaceships</h1>
   <%# faire des colonnes  %>
 
-  <div class="spaceship-cards container justify-content-center ">
+  <div class="container justify-content-center ">
     <%#  dans la div organiser les cards avec col etc %>
     <div class= "row d-flex justify-content-around">
       <% @spaceships.each do |spaceship| %>
-        <div class="card col-4-lg p-0 m-3 shadow" style="width: 18rem;">
-          <img src="<%= cl_image_path spaceship.photos.first.key %>" class="card-img-top" alt="...">
-          <div class="card-body d-flex flex-column justify-content-between">
-            <div>
-              <p class="card-title"><strong><%= spaceship.name %></strong></p>
-              <p class="card-text"><%= spaceship.address %></p>
-              <p><%= spaceship.price %>$/day</p>
-            </div>
-            <%= link_to "See More/Book", spaceship_path(spaceship), class: "btn btn-primary" %>
+          <div class= "index-card position-relative">
+            <%= link_to spaceship_path(spaceship) do %>
+              <img src="<%= cl_image_path spaceship.photos.first.key%>", alt="...">
+              <div class= "index-card-content">
+                <div>
+                  <p class="card-title"><strong><%= spaceship.name %></strong></p>
+                  <p class="card-text"><%= spaceship.address %></p>
+                </div>
+              </div>
+              <p class="position-absolute" style="bottom: 0px; right: 10px; color: purple"><strong><%= spaceship.price %>€/day</strong></p>
+            <%end%>
           </div>
-        </div>
       <% end %>
     </div>
   </div>
