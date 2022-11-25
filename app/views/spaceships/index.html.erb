@@ -4,7 +4,7 @@
 
   <div class="container justify-content-center d-flex">
     <%#  dans la div organiser les cards avec col etc %>
-    <div class= "row d-flex justify-content-around">
+    <div class= "row d-flex justify-content-evenly w-100">
       <% @spaceships.each do |spaceship| %>
           <div class= "index-card position-relative">
             <%= link_to spaceship_path(spaceship) do %>
