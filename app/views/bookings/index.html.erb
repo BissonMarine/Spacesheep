@@ -8,7 +8,7 @@
     <div class="card-product-infos">
       <p><small><%= "Booked from #{user_booking.booking_start_date} to #{user_booking.booking_end_date}" %></small></p>
       <p>📍<%= user_booking.spaceship.address %></p>
-      <p> total price <%= user_booking.total_price %>€</p>
+      <p> total price <%= user_booking.total_price %>$</p>
     </div>
   </div>
 <% end %>
@@ -21,7 +21,7 @@
         <div class="card-product-infos">
           <p><small><%= "Booked from #{owner_booking.booking_start_date} to #{owner_booking.booking_end_date}" %></small></p>
           <p>📍<%= owner_booking.spaceship.address %></p>
-          <p> total price <%= owner_booking.total_price %>€</p>
+          <p> total price <%= owner_booking.total_price %>$</p>
         </div>
         ✅❌
       </div>

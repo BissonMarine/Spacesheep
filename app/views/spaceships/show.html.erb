@@ -1,14 +1,14 @@
 <div class="spaceships-index-body d-flex" data-controller="animated-stars-js">
-  <div class="card col-5 m-5 p-4 border-0">
+  <div class="card col-5 m-5 p-4 border-0 rounded-4">
     <div class="card-spaceship border-bottom">
-      <div class="heading-card-spaceship mb-3 d-flex justify-content-between">
+      <div class="heading-card-spaceship mb-3 d-flex align-items-center justify-content-between">
         <h2><strong><%= @spaceship.name %></strong></h2>
-        <h4><strong>💰 <%= @spaceship.price %> €</strong></h4>
+        <h4><strong>💰 <%= @spaceship.price %> $</strong></h4>
       </div>
       <p>📋 <%= @spaceship.description.capitalize %></p>
       <p>⚔️ <%= @spaceship.weapons.capitalize %></p>
       <p>⚡ <%= @spaceship.energy.capitalize %> energy</p>
-      <p>💺 <%= @spaceship.seats %> seats</p>
+      <p>💺 <%= pluralize @spaceship.seats, 'seat' %></p>
       <p>📍 <%= @spaceship.address.capitalize %></p>
       <p><%= @spaceship.gravity ? '✅ Gravity ' : '❌ Gravity' %></p>
     </div>
@@ -17,7 +17,7 @@
         <%= f.input :booking_start_date, html5: true %>
         <%= f.input :booking_end_date, html5: true %>
         <div class="btn-submit d-flex justify-content-center">
-          <%= f.submit "Book now !", class: "btn-flat"%>
+          <%= f.submit "Book now !", class: "btn-medium mt-2"%>
         </div>
       <% end %>
     </div>
