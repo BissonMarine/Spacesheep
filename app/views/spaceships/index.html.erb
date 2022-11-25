@@ -1,12 +1,11 @@
 <div class="spaceships-index-body" data-controller="animated-stars-js">
-  <h1 class= "text-center page-title">All our available spaceships</h1>
+  <h1 class= "text-center page-title title-properties">All our available spaceships</h1>
   <%# faire des colonnes  %>
 
   <div class="container justify-content-center ">
     <%#  dans la div organiser les cards avec col etc %>
     <div class= "row d-flex justify-content-around">
       <% @spaceships.each do |spaceship| %>
-
           <div class= "index-card position-relative">
             <%= link_to spaceship_path(spaceship) do %>
               <img src="<%= cl_image_path spaceship.photos.first.key%>", alt="...">
@@ -15,14 +14,10 @@
                   <p class="card-title"><strong><%= spaceship.name %></strong></p>
                   <p class="card-text"><%= spaceship.address %></p>
                 </div>
-                <div>
-                </div>
               </div>
               <p class="position-absolute" style="bottom: 0px; right: 10px; color: purple"><strong><%= spaceship.price %>€/day</strong></p>
             <%end%>
-
           </div>
-
       <% end %>
     </div>
   </div>

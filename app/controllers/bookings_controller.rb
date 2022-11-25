@@ -16,13 +16,14 @@ class BookingsController < ApplicationController
     @booking = Booking.new(booking_params)
     @booking.user = current_user
     @booking.spaceship = @spaceship
-    @booking.total_price = (@booking.booking_end_date - @booking.booking_start_date) * @spaceship.price
     @booking.validated = "pending"
 
     if @booking.save
-      redirect_to bookings_path(@bookings)
+      @booking.total_price = (@booking.booking_end_date - @booking.booking_start_date) * @spaceship.price
+      redirect_to bookings_path, notice: "Action saved"
     else
-      render :new
+      render 'spaceships/show', status: :unprocessable_entity
+      # render :new, alert: "Something wrong..."
     end
   end
 
