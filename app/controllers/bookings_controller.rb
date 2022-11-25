@@ -2,10 +2,10 @@ class BookingsController < ApplicationController
   skip_before_action :authenticate_user!
 
   def index
-    @user_bookings = Booking.where(user: current_user)   
+    @user_bookings = Booking.where(user: current_user)
     @owner_bookings = Booking.includes(:spaceship).where(spaceship: { user: current_user })
   end
-  
+
   def new
     @spaceship = Spaceship.find(params[:spaceship_id])
     @booking = Booking.new
@@ -26,6 +26,7 @@ class BookingsController < ApplicationController
     end
   end
 
+  
   private
 
   def booking_params

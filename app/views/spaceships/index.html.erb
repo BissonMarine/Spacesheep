@@ -13,7 +13,7 @@
               <p class="card-title"><strong><%= spaceship.name %></strong></p>
               <p><strong></strong><%= link_to spaceship.name, spaceship_path(spaceship), class: "card-title text-decoration-none stretched-link text-color-black" %></strong></p>
               <p class="card-text"><%= spaceship.address %></p>
-              <p><%= spaceship.price %>€/day</p>
+              <p><strong><%= spaceship.price %>€/day</strong></p>
             </div>
             <%= link_to "See More/Book", spaceship_path(spaceship), class: "btn btn-primary" %>
           </div>
