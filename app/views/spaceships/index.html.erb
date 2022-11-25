@@ -6,18 +6,20 @@
     <%#  dans la div organiser les cards avec col etc %>
     <div class= "row d-flex justify-content-around">
       <% @spaceships.each do |spaceship| %>
-        <div class= "index-card">
-          <img src="<%= cl_image_path spaceship.photos.first.key%>", alt="...">
-          <div class="index-card-text">
-            <div>
-              <p class="card-title"><strong><%= spaceship.name %></strong></p>
-              <p><strong></strong><%= link_to spaceship.name, spaceship_path(spaceship), class: "card-title text-decoration-none stretched-link text-color-black" %></strong></p>
-              <p class="card-text"><%= spaceship.address %></p>
-              <p><strong><%= spaceship.price %>€/day</strong></p>
-            </div>
-            <%= link_to "See More/Book", spaceship_path(spaceship), class: "btn btn-primary" %>
+
+          <div class= "index-card">
+            <%= link_to spaceship_path(spaceship) do %>
+              <img src="<%= cl_image_path spaceship.photos.first.key%>", alt="...">
+              <div class="index-card-text">
+                <div>
+                  <p class="card-title"><strong><%= spaceship.name %></strong></p>
+                  <p class="card-text"><%= spaceship.address %></p>
+                  <p><strong><%= spaceship.price %>€/day</strong></p>
+                </div>
+              </div>
+            <%end%>
           </div>
-        </div>
+
       <% end %>
     </div>
   </div>
