@@ -16,9 +16,9 @@
           <%= f.input :booking_start_date, html5: true, input_html:{ data: { "calcul-date-js-target": "start", action: "change->calcul-date-js#compute" }} %>
           <%= f.input :booking_end_date, html5: true, input_html:{data: {"calcul-date-js-target": "end", action: "change->calcul-date-js#compute"}} %>
           <%= f.submit "Book now !", class: "btn-flat"%>
+          <div><p data-calcul-date-js-target="result"></p></div>
         <% end %>
       </div>
-      <p data-calcul-date-js-target="result"></p>
     </div>
     <div class="right col-5 m-5">
       <div class="photo">
